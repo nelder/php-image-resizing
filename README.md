@@ -1,5 +1,5 @@
 ##Image Resizing Functions for PHP
-These functions allow the user to handle typical user image input on a web application. Images can be compressed to reduce file size, images can also be used to derrive a thumbnail copy. This can be useful to save storage and increase load times when a smaller version of a file is required by the application. 
+These functions allow the user to handle typical user image input on a web application. Images can be compressed to reduce file size, images can also be used to derrive a thumbnail copy. This can be useful to save storage and increase load times when a smaller version of a file is required by the application. They depend upon the GD image library which is often preinstalled, unlike other image libaries like ImageMagick.
 
 ###Sample Use
 Compress an image on the server, note the image will be replaced by its new compressed iteration.
