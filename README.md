@@ -19,6 +19,7 @@ thumbnailImage("profile_images/".$unique_name , "profile_images/".$raw_name."_sm
 
 ###Installation
 1) Download imageResize.php and place it in your project directory.
+
 2) Require the file in your project.
 ```php
 require_once("imageResize.php");
