@@ -14,7 +14,7 @@ $ext = end((explode(".", $unique_name)));
 $raw_name = str_replace(".".$ext, "", $unique_name);
 
 //Run the generation operation to create a 500x500 bounded thumbnail image
-thumbnailImage("profile_images/".$unique_name , "profile_images/".$raw_name."_small.".$ext, 500);ho $value['age']."<br />";
+thumbnailImage("profile_images/".$unique_name , "profile_images/".$raw_name."_small.".$ext, 500);
 ```
 
 ###Installation
