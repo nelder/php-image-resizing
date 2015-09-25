@@ -1,29 +1,27 @@
-##PDO Function for PHP
-This function allows users in PHP to interface with mySQL databases using the PDO library which has the benefit of allowing prepared statements to avoid the potential exploit of a sql injection attack. This is particularly useful when running frontend web applications. 
+##Image Resizing Functions for PHP
+These functions allow the user to handle typical user image input on a web application. Images can be compressed to reduce file size, images can also be used to derrive a thumbnail copy. This can be useful to save storage and increase load times when a smaller version of a file is required by the application. 
 
 ###Sample Use
-Select statememnt returned in an associative array. One value is then echoed. 
+Compress an image on the server, note the image will be replaced by its new compressed iteration.
 ```php
-$return = sqlQuery($connection, "SELECT * FROM my_users;");
-echo $return[0]['username']
+//Compression
+compressImage("profile_images/".$unique_name);
 ```
-Select statement returns an associative array with one argument. All results are then printed out.
+Generate a thumbnail of an existing image on the server.
 ```php
-$returntwo = sqlQuery($connection, "SELECT * FROM prepared WHERE name = ?;", array("nick"));
-foreach ($returntwo as $key => $value) {
-	echo $value['age']."<br />";
-}
-```
-Insert statement does not return any useful data, it is just executed. In this example there are multiple arguments.
-```php
-sqlQuery($connection, "INSERT INTO prepared (name,age) VALUES (?,?)", array("Jane", 18));
+//Seperate the file name segments
+$ext = end((explode(".", $unique_name)));
+$raw_name = str_replace(".".$ext, "", $unique_name);
+
+//Run the generation operation to create a 500x500 bounded thumbnail image
+thumbnailImage("profile_images/".$unique_name , "profile_images/".$raw_name."_small.".$ext, 500);ho $value['age']."<br />";
 ```
 
 ###Installation
-1. Download sqlQuery.php and place it in your project directory.
+1. Download imageResize.php and place it in your project directory.
 2. Require the file in your project.
 ```php
-require_once("sqlQuery.php");
+require_once("imageResize.php");
 ```
 3. Use as directed above.
 
